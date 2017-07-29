@@ -16,7 +16,7 @@ public class Randomizer{
 
 		Random ran = new Random();
 		JFrame frame = new JFrame("");
-		JLabel title = new JLabel("Devon's Important Decision Maker");
+		JLabel title = new JLabel("Devin's Important Decision Maker");
 		JPanel panel = new JPanel();
 		JButton button = new JButton("Randomize!");
 		JLabel result = new JLabel("Enter chance of Yes");
