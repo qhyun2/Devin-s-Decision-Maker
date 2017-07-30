@@ -14,11 +14,10 @@ public class Randomizer{
 
 	public static void main(String args[]){
 
-		Random ran = new Random();
 		JFrame frame = new JFrame("");
 		JLabel title = new JLabel("Devin's Important Decision Maker");
 		JPanel panel = new JPanel();
-		JButton button = new JButton("Randomize!");
+		JButton button = new JButton("Decide!");
 		JLabel result = new JLabel("Enter chance of Yes");
 		JTextField input = new JTextField("0.5");
 
@@ -51,11 +50,12 @@ public class Randomizer{
 
 				try{
 					in = Double.parseDouble(input.getText());
+					System.out.println(in);
 				}catch (Exception e2){
-					result.setText("Invalid Input Bozo Brain");
+					
 				}
 				
-				if(in != 0){
+				if(in != -1){
 					if(Math.random() < in){
 						result.setText("Yes");
 					}
@@ -63,8 +63,9 @@ public class Randomizer{
 						result.setText("No");
 					}
 				}
-
-
+				else{
+					result.setText("Invalid Input Bozo Brain");
+				}
 			}
 		});
 	}
