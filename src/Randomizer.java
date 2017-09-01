@@ -2,17 +2,24 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 public class Randomizer{
 
 	public static void main(String args[]){
+		
+		try {
+	        UIManager.setLookAndFeel(
+	            UIManager.getSystemLookAndFeelClassName());
+	    } 
+	    catch (Exception e) {
+	    }
 
 		JFrame frame = new JFrame("");
 		JLabel title = new JLabel("Devin's Important Decision Maker");
@@ -34,7 +41,6 @@ public class Randomizer{
 		panel.setLayout(new GridLayout(4, 1, 200, 20));
 		panel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-
 		frame.pack();
 		frame.setVisible(true);
 		frame.setResizable(true);
@@ -46,24 +52,19 @@ public class Randomizer{
 			@Override
 			public void actionPerformed(ActionEvent e){
 
-				double in = -1;
+				double in = 0;
 
 				try{
 					in = Double.parseDouble(input.getText());
-					System.out.println(in);
-				}catch (Exception e2){
 					
-				}
-				
-				if(in != -1){
 					if(Math.random() < in){
 						result.setText("Yes");
 					}
 					else{
 						result.setText("No");
 					}
-				}
-				else{
+					
+				}catch (Exception e2){
 					result.setText("Invalid Input Bozo Brain");
 				}
 			}
